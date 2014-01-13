@@ -1,0 +1,17 @@
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%= t('views.event.show') %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @event.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @event.date %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('views.common.back'), user_events_path(@user), :class => 'btn' %>
+  <%= link_to t('views.common.edit'), edit_user_event_path(@user, @event), :class => 'btn' %>
+  <%= link_to t('views.common.destroy'), user_event_path(@user, @event), :method => 'delete', :data => { :confirm => t('views.common.confirm') }, :class => 'btn btn-danger' %>
+</div>

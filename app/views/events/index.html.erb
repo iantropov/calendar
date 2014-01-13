@@ -1,0 +1,27 @@
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%= t('views.event.events') %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name, user_event_path(@user, event) %></td>
+        <td><%= event.date %></td>
+        <td>
+          <%= link_to t('views.common.edit'), edit_user_event_path(@user, event), :class => 'btn btn-mini' %>
+          <%= link_to t('views.common.destroy'), user_event_path(@user, event), :method => 'delete', :data => { :confirm => t('views.common.confirm') }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('views.common.new'), new_user_event_path(@user), :class => 'btn' %>

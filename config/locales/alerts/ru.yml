@@ -1,0 +1,7 @@
+ru:
+  alerts:
+    session:
+      require_login: Необходимо войти!
+      invalid_login: Неправильные имя пользователя или пароль!
+      logged_in: Вход выполнен!
+      logged_out: Выход выполнен!

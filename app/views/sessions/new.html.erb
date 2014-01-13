@@ -1,0 +1,24 @@
+<h1><%= t("views.user.log_in") %></h1>
+
+<%= form_tag sessions_path, :class => "form-horizontal" do %>
+  <div class="control-group">
+    <%= label_tag :email, t("views.session.email"), :class => "control-label"  %>
+    <div class="controls">
+    <%= text_field_tag :email, params[:email], :class => "text_field" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag :password, t("views.session.password"), :class => "control-label"  %>
+    <div class="controls">
+    <%= text_field_tag :password, params[:password], :class => "text_field" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag :remember_me, t("views.session.remember_me"), :class => "control-label"  %>
+    <div class="controls">
+      <%= check_box_tag :remember_me, 1, params[:remember_me], :class => "checkbox" %>
+    </div>
+  </div>
+
+  <div class="actions"><%= submit_tag t("views.user.log_in"), :class => "btn" %></div>
+<% end %>

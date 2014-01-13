@@ -1,0 +1,12 @@
+ru:
+  views:
+    common:
+      cancel: Отмена
+      save: Сохранить
+      calendar_title: Календарь
+      navigation: Навигация
+      confirm: Вы уверены ?
+      edit: Редактировать
+      destroy: Удалить
+      new: Добавить
+      back: Назад

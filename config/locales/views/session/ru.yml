@@ -1,0 +1,6 @@
+ru:
+  views:
+    session:
+      email: Почтовый адрес
+      password: Пароль
+      remember_me: Запомнить
