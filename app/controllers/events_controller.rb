@@ -7,4 +7,11 @@ class EventsController < InheritedResources::Base
     params.permit(:event => [:name, :date])
   end
 
+  protected
+
+    def collection
+      @events = super
+      @events = Event.all if params[:all]
+    end
+
 end

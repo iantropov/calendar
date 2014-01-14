@@ -2,6 +2,7 @@ ru:
   views:
     event:
       events: События
+      all_events: Все события
       show: Событие
       edit: Редактирование события
       new: Новое событие

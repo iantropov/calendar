@@ -6,12 +6,21 @@ describe EventsController do
   let(:user_params)      { { :user_id => @loginned_user.id } }
 
   describe "GET index", :login do
-    it "assigns all users as @users" do
+    it "assigns events of @loginned_user" do
       events = create_list(:event, 5, :user => @loginned_user)
       get :index, user_params
       expect(response.status).to eq(200)
       assigns(:events).should =~ events
     end
+
+    it "assigns all events as @events" do
+      events_1 = create_list(:event, 5, :user => @loginned_user)
+      events_2 = create_list(:event, 5, :user => create(:user))
+      get :index, user_params.merge(:all => true)
+      expect(response.status).to eq(200)
+      assigns(:events).should =~ events_1 + events_2
+    end
+
   end
 
   describe "GET show", :login do
