@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe EventsController do
   let(:event)            { create(:event, :user => @loginned_user) }
-  let(:valid_attributes) { attributes_for(:event) }
+  let(:valid_attributes) { build(:event).attributes.symbolize_keys }
   let(:user_params)      { { :user_id => @loginned_user.id } }
 
   describe "GET index", :login do

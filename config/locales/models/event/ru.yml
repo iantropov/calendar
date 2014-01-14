@@ -6,3 +6,4 @@ ru:
       event:
         name : Название
         date : Дата
+        event_period_id : Тип периода

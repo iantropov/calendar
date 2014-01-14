@@ -12,6 +12,13 @@
     </div>
   </div>
 
+  <div class="control-group">
+    <%= f.label :event_period_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:event_period_id, EventPeriod.all, :id, :name) %>
+    </div>
+  </div>
+
   <div class="form-actions">
     <%= f.submit t('views.common.save'), :class => 'btn btn-primary' %>
     <%= link_to t('views.common.cancel'), user_events_path(@user), :class => 'btn' %>

@@ -4,7 +4,7 @@ class EventsController < InheritedResources::Base
   before_filter :owner_require_login
 
   def permitted_params
-    params.permit(:event => [:name, :date])
+    params.permit(:event => [:name, :date, :event_period_id])
   end
 
   protected

@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112133848) do
+ActiveRecord::Schema.define(version: 20140114022154) do
+
+  create_table "event_periods", force: true do |t|
+    t.string  "name"
+    t.integer "days",   default: 0
+    t.integer "months", default: 0
+    t.integer "years",  default: 0
+  end
 
   create_table "events", force: true do |t|
     t.integer "user_id"
-    t.string  "name",    null: false
-    t.date    "date",    null: false
+    t.string  "name",            null: false
+    t.date    "date",            null: false
+    t.integer "event_period_id", null: false
   end
 
   create_table "users", force: true do |t|
