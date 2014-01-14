@@ -39,3 +39,5 @@ group :test do
   gem "guard-rspec"
   gem "guard-spork"
 end
+
+gem 'rails_12factor', group: :production
