@@ -23,6 +23,24 @@ describe EventsController do
 
   end
 
+  describe "GET calendar", :login do
+    it "assigns calendar for @loginned_user" do
+      event = create(:event, :user => @loginned_user)
+      get :calendar, user_params
+      expect(response.status).to eq(200)
+      assigns(:calendar).should_not be_empty
+    end
+
+    it "assigns all events as @events" do
+      events_1 = create_list(:event, 5, :user => @loginned_user)
+      events_2 = create_list(:event, 5, :user => create(:user))
+      get :index, user_params.merge(:all => true)
+      expect(response.status).to eq(200)
+      assigns(:events).should =~ events_1 + events_2
+    end
+
+  end
+
   describe "GET show", :login do
     it "assigns single event as @event" do
       get :show, user_params.merge({ :id => event.to_param })

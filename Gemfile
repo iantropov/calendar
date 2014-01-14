@@ -17,6 +17,8 @@ gem "sorcery"
 gem "email_validator"
 gem "inherited_resources"
 
+gem "ice_cube"
+
 group :development, :test do
   gem "pry-rails"
 end

@@ -7,6 +7,10 @@ class EventsController < InheritedResources::Base
     params.permit(:event => [:name, :date, :event_period_id])
   end
 
+  def calendar
+    @calendar = CalendarService.get_calendar_for(current_user.events)
+  end
+
   protected
 
     def collection

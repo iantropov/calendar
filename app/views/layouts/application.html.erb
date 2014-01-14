@@ -61,6 +61,7 @@
               <li><%= link_to t("views.user.users"), users_path  %></li>
               <li><%= link_to t("views.event.events"), user_events_path(current_user) if logged_in? %></li>
               <li><%= link_to t("views.event.all_events"), user_events_path(current_user, :all => true) if logged_in? %></li>
+              <li><%= link_to t("views.event.events_for_year"), calendar_user_events_path(current_user) if logged_in? %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

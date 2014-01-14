@@ -20,12 +20,10 @@ Spork.prefork do
 
     config.order = "random"
 
-    config.before(:all) do
-      DatabaseCleaner.start
-    end
+    DatabaseCleaner.strategy = :truncation
 
-    config.before(:each, :login => true) do
-      DatabaseCleaner.strategy = :truncation
+    config.before(:each) do
+      DatabaseCleaner.start
     end
 
     config.after(:each) do

@@ -3,6 +3,7 @@ ru:
     event:
       events: События
       all_events: Все события
+      events_for_year: События на год
       show: Событие
       edit: Редактирование события
       new: Новое событие
